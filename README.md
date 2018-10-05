@@ -2,7 +2,7 @@
   Sample test for Node project
   
 ## Start Command
-    ```
-    npm run start
-    ```  
+```
+npm run start
+``` 
 
