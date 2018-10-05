@@ -5,4 +5,8 @@
 ```
 npm run start
 ``` 
+## Test Command
 
+```
+npm run test
+``` 
