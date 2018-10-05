@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="loginscript.js"></script>
+
+    <style>
+        .frame {
+
+            border: 1px solid black;
+
+            background-color: #f2f2f2;
+            background-image: url("https://www.x-on.co.uk/images/map-fleewinter.jpg");
+        }
+
+        .button {
+
+            text-align: center;
+            display: inline-block;
+            width: 10%;
+            height: 25;
+            position: relative;
+            left: 6%;
+
+        }
+
+        #link {
+            position: relative;
+            left: 8%;
+
+        }
+
+        #demo {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        body {
+
+            background-color: ghostwhite;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="my_form" id="my">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="frame">
+
+            <h3 align="center">
+                <table align="center" class="hd">
+                    <tr>
+                        <th>
+                            <h1>Sign in</h1>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <input type="text" placeholder="usr" name="uname" id="name" required autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            <input type="password" placeholder="pwd" name="psw" id="pid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="pwd" style="color:red; visibility: hidden;">8 characters</span>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+
+                <input type="button" onclick="ValidatePass()" align="center" class="button" value="login">
+                <a href="/client.html" id="link">New user?Signup</a>
+                </input>
+
+
+
+
+            </h3>
+        </div>
+    </form>
+
+    <div id="demo"></div>
+
+
+</body>
+
+</html>

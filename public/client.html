@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+    <style>
+        .frame {
+            border: 1px solid black;
+
+            background-color: #f2f2f2;
+            background-image: url("https://www.siemens.com/content/dam/internet/siemens-com/global/company/about/application-pages/siemens-weltkarte-en-de-20170508/SIEMENS_Weltkarte_EN_DE_20170508/worldmap-EN/worldmap-EN/html/images/map.png");
+        }
+
+        .button {
+
+            text-align: center;
+            margin: auto;
+            display: block;
+
+            width: 70;
+            height: 25;
+        }
+
+        #demo {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="my_form" id="my" method="POST" action="login">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="frame">
+
+            <h3 align="center">
+                <table align="center" class="hd">
+                    <tr>
+                        <th>
+                            <h1>Sign up</h1>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" placeholder="name" id="name" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="name" style="color:red; visibility: hidden;">Name not valid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>
+                            <input type="text" placeholder="Addr." id="Add" required autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <input type="text" placeholder="usr" id="uname" required autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>emailid</td>
+                        <td>
+                            <input type="email" placeholder="email" name="mail" id="eid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="idd" style="color:red; visibility: hidden;">Not of valid format as of now</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>
+                            <input type="password" placeholder="password" name="psw" id="pid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="pwd" style="color:red; visibility: hidden;">min. 8 characters(number,alphabet and special char.)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Retype password </td>
+                        <td>
+                            <input type="password" placeholder="password" name="psw" id="prid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="pwd" id="reso" style="color:red; visibility: hidden;">The two field's doesn't match</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>phoneno</td>
+                        <td>
+                            <input type="text" placeholder="no." name="no." min="11" id="no" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="ph" style="color:red; visibility: hidden;">10-digits required</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" onclick="ValidatePass()" class="button" value="create account"></input>
+                        </td>
+                        <td></td>
+                    </tr>
+
+
+
+                </table>
+                <br>
+
+
+
+            </h3>
+        </div>
+    </form>
+
+    <div id="demo"></div>
+
+
+</body>
+
+</html>

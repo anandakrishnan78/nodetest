@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="homescript.js"></script>
+    <style>
+        #header {
+            font-weight: bold;
+            font-size: large;
+        }
+
+        table {
+
+            border: 1px solid black;
+            border-color: burlywood;
+
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_6kHaIddDVxFDFhUcb53bGXQ0nPOe5Z8kFG8L4IOL6GDAWXYPpw");
+            background-size: 100%;
+        }
+
+        body {
+            background-image: url("https://ak0.picdn.net/shutterstock/videos/23047210/thumb/1.jpg");
+            background-size: 100%;
+
+        }
+
+        #response {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="my_form" id="my" method="POST" action="login">
+
+
+
+        <div class="frame">
+
+
+
+            <h3 align="center">
+
+
+                <table align="center" class="hd">
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td id="header">
+
+                            Account Details
+                        </td>
+
+
+
+
+
+                        <td>
+                            <img id="blah" src="#" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" name="no." id="name" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="name" style="color:red; visibility: hidden;">name not valid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>
+                            <input type="text" name="no." id="address" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="add" style="color:red; visibility: hidden;">Address required</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <input type="text" name="no." id="user" required autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Change password</td>
+                        <td>
+                            <input type="password" placeholder="password" name="psw" id="pid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="pwd" style="color:red; visibility: hidden;">min. 8 characters(number,alphabet and special char.)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Retype password </td>
+                        <td>
+                            <input type="password" placeholder="password" name="psw" id="prid" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="pwd" id="reso" style="color:red; visibility: hidden;">The two field's doesn't match</span>
+                        </td>
+                    </tr>
+                    <td>emailid</td>
+                    <td>
+                        <input type="email" placeholder="email" name="mail" id="eid" required autocomplete="off">
+                    </td>
+                    <td>
+                        <span class="mail" style="color:red; visibility: hidden;">not valid as of now</span>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>phoneno</td>
+                        <td>
+                            <input type="text" name="no." min="11" id="phone" required autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="ph" style="color:red; visibility: hidden;">10 digits exactly</span>
+                        </td>
+                    </tr>
+
+                    <br>
+                    <br>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="button" onclick="edit()" class="button" value="Update"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type='file' id='filechooser' onchange="image(this)" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="button" onclick="logout()" class="button" value="logout"></input>
+                        </td>
+
+                    </tr>
+
+
+
+
+
+                </table>
+                <br>
+        </div>
+    </form>
+
+    <h1 id="response"></h1>
+</body>
+
+</html>
