@@ -125,23 +125,23 @@ class userServices extends db {
         let mail = obj.mail;
         let id = obj.id;
         let pflag = obj.pflag;
-        let object = this;
+        let self = this;
         let salt = 10;
 
         return new Promise((resolve, reject) => {
             bcrypt.hash(password, salt, function (err, hashp) {
                 let query = "update log set name=$1,address=$2,phone_no=$3,email=$4 where id=$5";
                 let params = [name, address, phone, mail, id];
-                object.execute(query, params);
+                self.execute(query, params);
 
                 if (pflag == "true") {
                     let updatepass = "update log set password=$1 where id=$2";
                     let param = [hashp, id];
-                    object.execute(updatepass, param);
+                    self.execute(updatepass, param);
                 }
                 let countquery = "select count(*) from log where username=$1 and id!=$2";
                 let data = [user, id];
-                let result = object.execute(countquery, data);
+                let result = self.execute(countquery, data);
                 result.then((res) => {
                     let count = res.rows[0].count;
                     if ((count > 0) || (user == "")) {
@@ -150,7 +150,7 @@ class userServices extends db {
                         return;
                     }
                     let updateuser = "update log set username=$1 where id=$2";
-                    object.execute(updateuser, data);
+                    self.execute(updateuser, data);
                     let msg = "successfull updation";
                     logger.emit("info", msg);
                     let response = "Details updated successfully";
