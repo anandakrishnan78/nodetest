@@ -7,7 +7,7 @@
 */
 
 const express = require("express");
-const logger = require("../logfile");
+const logger = require("../../logfile");
 const userServe = require("../services/userServices");
 const route = express.Router();
 const service = new userServe();

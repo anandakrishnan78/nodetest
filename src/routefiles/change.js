@@ -8,7 +8,7 @@
 const express = require("express");
 const route = express.Router();
 const adminServe = require("../services/adminServices");
-const logger = require("../logfile");
+const logger = require("../../logfile");
 const service = new adminServe(); 
 
 /**Routed request from Admin page for providing Admin privilege */

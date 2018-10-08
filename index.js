@@ -8,13 +8,13 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const clients = require("./routefiles/register");
-const login = require("./routefiles/login");
-const change = require("./routefiles/change");
-const edit = require("./routefiles/edit");
-const home = require("./routefiles/home");
-const del = require("./routefiles/delete");
-const admin = require("./routefiles/admin");
+const clients = require("./src/routefiles/register");
+const login = require("./src/routefiles/login");
+const change = require("./src/routefiles/change");
+const edit = require("./src/routefiles/edit");
+const home = require("./src/routefiles/home");
+const del = require("./src/routefiles/delete");
+const admin = require("./src/routefiles/admin");
 
 
 const app = express();

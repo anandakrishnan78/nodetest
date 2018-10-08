@@ -9,7 +9,7 @@
 const express = require("express");
 const route = express.Router();
 const userServe = require("../services/userServices");
-const logger = require("../logfile");
+const logger = require("../../logfile");
 const service = new userServe();
 /**
  * Routed request from registration page
@@ -27,6 +27,7 @@ route.post("/", (req, resp) => {
 
     let callregister = service.register(data);
     callregister.then((res) => {
+       
         if (res.stat > 0) {
             let status = { "stat": 1, "id": res.id };
             resp.send(status);
