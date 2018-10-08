@@ -7,7 +7,7 @@
 */
 const express = require("express");
 const adminServe = require("../services/Adminservices");
-const logger = require("../logfile");
+const logger = require("../../logfile");
 const service = new adminServe();
 const route = express.Router();
 
