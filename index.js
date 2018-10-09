@@ -15,6 +15,10 @@ const edit = require("./src/routefiles/edit");
 const home = require("./src/routefiles/home");
 const del = require("./src/routefiles/delete");
 const admin = require("./src/routefiles/admin");
+const  {fork}  = require("child_process");
+const forked = fork("./child.js");
+
+forked.send({ hello: "world" });
 
 
 const app = express();
