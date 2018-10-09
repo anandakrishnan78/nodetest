@@ -18,7 +18,7 @@ setInterval(() => {
         let mailOptions = {
             from: "ananduvkk78@gmail.com",
             to: res.rows[0].email,
-            subject: "new ✔",
+            subject: "new test✔",
             text: "Hello world?",
             html: "<b>Hello world?</b>"
         };
