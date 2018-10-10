@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 setInterval(() => {
     let emailquery = "select email from log where username=$1";
     let param = ["balu"];
-    db.execute(emailquery, param).then((res) => {
+    db.execute(emailquery, param ).then((res) => {
         let mailOptions = {
             from: "ananduvkk78@gmail.com",
             to: res.rows[0].email,
