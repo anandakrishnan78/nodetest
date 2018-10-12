@@ -105,6 +105,7 @@ class userServices extends db {
             let param = id;
             let list = this.execute(listquery, [param]);
             list.then((res) => {
+
                 resolve(res);
             }).catch((err) => {
                 reject(err);
