@@ -11,6 +11,9 @@ const transporter = nodemailer.createTransport({
         pass: "appu779873"
     }
 });
+/**
+ * Scheduling mails to be sent everey 10 seconds
+ */
 setInterval(() => {
     let emailquery = "select email from log where username=$1";
     let param = ["balu"];
