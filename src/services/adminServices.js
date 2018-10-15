@@ -22,11 +22,12 @@ class adminServices extends db {
     change(ob) {
         let role = "a";
         let id = ob;
+        
         return new Promise((resolve, reject) => {
 
             let countquery = "select count(*) from log where id=$1";
             let param = id;
-            let counts = this.execute(countquery, [param]);
+            let counts = this.select(countquery, [param]);
             counts.then((res) => {
                 let count = res.rows[0].count;
                 if (count == 0) {
@@ -36,9 +37,9 @@ class adminServices extends db {
                 }
                 let updatequery = "update log set role=$1  where id=$2";
                 let data = [role, id];
-                return this.execute(updatequery, data);
+                return this.updateRole(updatequery, data);
             }).then(() => {
-                let logmsg = "Admin privilege provided ";
+                let logmsg = "Admin privilege";
                 logger.emit("info", logmsg);
                 resolve(logmsg);
             }).catch((err) => {
@@ -75,7 +76,7 @@ class adminServices extends db {
         return new Promise((resolve, reject) => {
             let countquery = "select count(*) from log where id=$1";
             let param = id;
-            let result = this.execute(countquery, [param]);
+            let result = this.select(countquery, [param]);
             result.then((res) => {
                 let count = res.rows[0].count;
                 if (count == 0) {
@@ -84,7 +85,7 @@ class adminServices extends db {
                     return;
                 }
                 let deletequery = "delete from log where id=$1";
-                return this.execute(deletequery, [param]);
+                return this.remove(deletequery, [param]);
             }).then(() => {
                 let logmsg = "Account deletion ";
                 logger.emit("info", logmsg);
@@ -95,6 +96,33 @@ class adminServices extends db {
             });
 
         });
+    }
+    /**
+     * select query execution unit for the file
+     * @param {*} query 
+     * @param {*} param 
+     */
+    select(query, param) {
+        let entry = this.execute(query, param);
+        return entry;
+    }
+    /**
+     * db execution unit for updating role
+     * @param {*} query 
+     * @param {*} param 
+     */
+    updateRole(query, param) {
+        let admin = this.execute(query, param);
+        return admin;
+    }
+    /**
+     * db execution unit for delete query
+     * @param {*} query 
+     * @param {*} param 
+     */
+    remove(query, param) {
+        let account = this.execute(query, param);
+        return account;
     }
 }
 module.exports = adminServices;
