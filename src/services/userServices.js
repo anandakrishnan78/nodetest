@@ -78,13 +78,17 @@ class userServices extends db {
                     return;
                 }
                 bcrypt.compare(password, res.rows[0].password, function (err, resp) {
+                   
                     if (!resp) {
                         let status = { "stat": 0, "info": "fields not entered or password mistaken" };
                         logger.emit("info", status.info);
+                      
                         resolve(status);
                         return;
                     }
+                  
                     let status = { "id": res.rows[0].id, "stat": 1, "role": res.rows[0].role };
+                    
                     resolve(status);
                 });
             }).catch((err) => {
