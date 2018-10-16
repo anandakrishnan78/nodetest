@@ -1,6 +1,6 @@
 const sinon = require("sinon");
 const user = require("../src/services/userServices");
-const assert = require("chai").assert;;
+const assert = require("chai").assert;
 const userobj = new user();
 
 /**
@@ -9,7 +9,7 @@ const userobj = new user();
 describe("checking the home method", () => {
     let results = {};
     let homestub;
-    before(() => {
+    beforeEach(() => {
         results = {
             rows: [{
                 id: 140,
@@ -52,7 +52,7 @@ describe("checking the login method", () => {
     let results = {};
     let loginstub;
     let status = { "id": 140, "stat": 1, "role": "u" };
-    before(() => {
+    beforeEach(() => {
         results = {
             rows: [{
                 id: 140,
@@ -98,12 +98,13 @@ describe("checking the register method", () => {
     let results = {};
     let selectstub;
     let insertstub;
+    let idstub;
     let status = {
         rows: [{ id: 123, stat: 1 }]
     };
 
 
-    before(() => {
+    beforeEach(() => {
         results = {
             rows: [{
 
@@ -112,11 +113,13 @@ describe("checking the register method", () => {
         };
         selectstub = sinon.stub(userobj, "countRegister");
         selectstub.resolves(results);
-        insertstub = sinon.stub(userobj, "getid");
-        insertstub.resolves(status);
+        insertstub = sinon.stub(userobj, "insertRegister");
+        insertstub.resolves();
+        idstub = sinon.stub(userobj, "getid");
+        idstub.resolves(status);
 
     });
-    it("should  execute and return   status", () => {
+    it("should  execute and return status", () => {
         return userobj.register(ob).then((res) => {
             assert.equal(res.stat, status.rows[0].stat);
         }).catch((err) => {
@@ -126,6 +129,8 @@ describe("checking the register method", () => {
     });
     afterEach(() => {
         selectstub.restore();
+        insertstub.restore();
+        idstub.restore();
 
     });
 });
@@ -145,21 +150,19 @@ describe("checking the edit method", () => {
     };
     let results = {};
     let response = "Details updated successfully";
-
     let updateustub;
 
-    before(() => {
+    beforeEach(() => {
         results = {
             rows: [{ count: "0" }]
         };
         updateustub = sinon.stub(userobj, "checkEntry");
         updateustub.resolves(results);
     });
-    it("should  execute and return   status message", () => {
+    it("should  execute and return status message", () => {
         return userobj.edit(ob).then((res) => {
             assert.equal(res, response);
         }).catch((err) => {
-
             assert.equal(err, false);
 
         });

@@ -11,7 +11,7 @@ const adminobj = new admin();
 describe("checking the admin method", () => {
     let results = {};
     let adminstub;
-    before(() => {
+    beforeEach(() => {
         results = {
             rows: [{
                 id: 140,
@@ -48,7 +48,8 @@ describe("checking the change method", () => {
     let id = 155;
     let response = "Admin privilege";
     let selectstub;
-    before(() => {
+    let updatestub;
+    beforeEach(() => {
         let results = {
             rows: [{
                 count: 1
@@ -56,6 +57,8 @@ describe("checking the change method", () => {
         };
         selectstub = sinon.stub(adminobj, "select");
         selectstub.resolves(results);
+        updatestub = sinon.stub(adminobj, "updateRole");
+        updatestub.resolves();
     });
     it("should  execute and return all user details", () => {
         return adminobj.change(id).then((res) => {
@@ -66,6 +69,7 @@ describe("checking the change method", () => {
     });
     afterEach(() => {
         selectstub.restore();
+        updatestub.restore();
     });
 });
 
@@ -75,7 +79,8 @@ describe("checking the delete method", () => {
     let id = 159;
     let response = "Account Deleted";
     let selectstub;
-    before(() => {
+    let deletestub;
+    beforeEach(() => {
         let results = {
             rows: [{
                 count: 1
@@ -84,6 +89,8 @@ describe("checking the delete method", () => {
         };
         selectstub = sinon.stub(adminobj, "select");
         selectstub.resolves(results);
+        deletestub = sinon.stub(adminobj, "remove");
+        deletestub.resolves();
     });
     it("should  execute and return response message", () => {
         return adminobj.delete(id).then((res) => {
@@ -96,5 +103,6 @@ describe("checking the delete method", () => {
     });
     afterEach(() => {
         selectstub.restore();
+        deletestub.restore();
     });
 });

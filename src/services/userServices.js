@@ -51,7 +51,6 @@ class userServices extends db {
                         let username = user;
                         return self.getid(idquery, [username]);
                     }).then((res) => {
-                        console.log(res.rows[0]);
                         let data = { id: res.rows[0].id, stat: 1 };
                         resolve(data);
                     }).catch((err) => {
