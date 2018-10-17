@@ -1,10 +1,17 @@
+/**
+ * @author Anandakrishnan
+ * @email ananduvkk78@gmail.com
+ * @create date 2018-10-16 11:07:14
+ * @modify date 2018-10-16 11:07:14
+ * @desc [Testing the functions of userServices]
+*/
 const sinon = require("sinon");
 const user = require("../src/services/userServices");
 const assert = require("chai").assert;
 const userobj = new user();
 
 /**
- * Testing the home method of userservices
+ * testing the home function
  */
 describe("checking the home method", () => {
     let results = {};
@@ -83,7 +90,7 @@ describe("checking the login method", () => {
 });
 
 /**
- * testing the register method
+ * testing the register function
  */
 describe("checking the register method", () => {
     let ob = {
@@ -135,8 +142,9 @@ describe("checking the register method", () => {
     });
 });
 
-/**  testing the edit function */
-
+/**
+ * testing the edit function
+ */
 describe("checking the edit method", () => {
     let ob = {
         name: "balu",
@@ -150,14 +158,14 @@ describe("checking the edit method", () => {
     };
     let results = {};
     let response = "Details updated successfully";
-    let updateustub;
+    let updatestub;
 
     beforeEach(() => {
         results = {
             rows: [{ count: "0" }]
         };
-        updateustub = sinon.stub(userobj, "checkEntry");
-        updateustub.resolves(results);
+        updatestub = sinon.stub(userobj, "checkEntry");
+        updatestub.resolves(results);
     });
     it("should  execute and return status message", () => {
         return userobj.edit(ob).then((res) => {
@@ -168,7 +176,7 @@ describe("checking the edit method", () => {
         });
     });
     afterEach(() => {
-        updateustub.restore();
+        updatestub.restore();
 
     });
 });

@@ -34,8 +34,8 @@ class userServices extends db {
                     let userdata = [user];
                     let count = self.countRegister(countquery, userdata);
                     count.then((res) => {
-                        
-                        if (res.rows[0].count!=0) {
+
+                        if (res.rows[0].count != 0) {
                             // console.log(res.rows[0].count );
                             let status = { stat: 0 };
                             resolve(status);
@@ -90,7 +90,6 @@ class userServices extends db {
                     }
 
                     let status = { "id": res.rows[0].id, "stat": 1, "role": res.rows[0].role };
-
                     resolve(status);
                 });
             }).catch((err) => {
@@ -150,7 +149,7 @@ class userServices extends db {
                 let data = [user, id];
                 let result = self.checkEntry(countquery, data);
                 result.then((res) => {
-                   
+
                     let count = res.rows[0].count;
                     if ((count > 0) || (user == "")) {
                         let response = "This username cannot be used but any  other changes have been recorded";
