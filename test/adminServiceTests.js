@@ -1,12 +1,16 @@
+/**
+ * @author Anandakrishnan
+ * @email ananduvkk78@gmail.com
+ * @create date 2018-10-16 11:07:05
+ * @modify date 2018-10-16 11:07:05
+ * @desc [Testing the functions of adminServices]
+*/
 const sinon = require("sinon");
 const admin = require("../src/services/adminServices");
 const assert = require("chai").assert;
 const adminobj = new admin();
-
-
-
 /**
- * Testing the admin method of adminServices
+ * testing admin function
  */
 describe("checking the admin method", () => {
     let results = {};
@@ -43,7 +47,9 @@ describe("checking the admin method", () => {
 });
 
 
-/** testing change function */
+/**
+ * testing change function
+ */
 describe("checking the change method", () => {
     let id = 155;
     let response = "Admin privilege";
@@ -73,8 +79,9 @@ describe("checking the change method", () => {
     });
 });
 
-/** testing delete function */
-
+/**
+ * testing delete function
+ */
 describe("checking the delete method", () => {
     let id = 159;
     let response = "Account Deleted";
@@ -87,6 +94,7 @@ describe("checking the delete method", () => {
             }]
 
         };
+        
         selectstub = sinon.stub(adminobj, "select");
         selectstub.resolves(results);
         deletestub = sinon.stub(adminobj, "remove");
