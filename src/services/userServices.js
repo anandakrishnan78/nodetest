@@ -108,9 +108,7 @@ class userServices extends db {
 
             let listquery = "select * from log where id=$1";
             let param = id;
-            let list = this.execute(listquery, [param]);
-            list.then((res) => {
-
+            this.execute(listquery, [param]).then((res) => {
                 resolve(res);
             }).catch((err) => {
                 reject(err);
