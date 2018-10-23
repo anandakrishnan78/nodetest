@@ -4,25 +4,33 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="adscript.js"></script>
     <style>
-        
         table {
-    border-collapse: collapse;
-    width: 100%;
-}
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-    font-weight: bold;
-}
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            font-weight: bold;
+        }
 
-tr:nth-child(even){background-color: #f2f2f2}
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
 
-th {
-    background-color: #4CAF50;
-    color: white;
-    font-weight:bold;
-}
+        tr:nth-child(odd) {
+            background-color: indianred
+        }
+
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
         body {
             background-image: url("https://media.istockphoto.com/photos/admin-message-on-the-working-in-the-office-on-table-background-picture-id690470194?k=6&m=690470194&s=612x612&w=0&h=R5fkl-FV5659LojUveU6JCQFqksSkLg_L9zz4JkyDVo=");
             background-size: 100%
@@ -43,15 +51,15 @@ th {
     </style>
 
     <body>
-    
+
         <h1 align="center">USER Details</h1>
         <p id="details"></p>
         <br>
-        <br>
-        Enter id of user<input type="text"  id="pid" required autocomplete="off">
-        <input type="button"  onclick="change()" value="Give admin privilege"></input>
+        <br> Enter id of user
+        <input type="text" id="pid" required autocomplete="off">
+        <input type="button" onclick="change()" value="Give admin privilege"></input>
         <input type="button" id="log" onclick="logout()" value="logout"></input>
-       <input type="button"  onclick="dlt()" value="Delete Account"></input>
+        <input type="button" onclick="dlt()" value="Delete Account"></input>
         <p id="res"></p>
     </body>
 </head>
