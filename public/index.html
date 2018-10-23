@@ -1,98 +1,76 @@
-<!DOCTYPE html>
+<html>
 
 <head>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="loginscript.js"></script>
-
-    <style>
-        .frame {
-
-            border: 1px solid black;
-
-            background-color: #f2f2f2;
-            background-image: url("https://www.x-on.co.uk/images/map-fleewinter.jpg");
-        }
-
-        .button {
-
-            text-align: center;
-            display: inline-block;
-            width: 10%;
-            height: 25;
-            position: relative;
-            left: 6%;
-
-        }
-
-        #link {
-            position: relative;
-            left: 8%;
-
-        }
-
-        #demo {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        body {
-
-            background-color: ghostwhite;
-
-        }
-    </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./indexstyle.css">
+  <script type="text/javascript" src="loginscript.js"></script>
 </head>
 
 <body>
+  <section class="login-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 login-sec">
+          <h2 class="text-center">Login Now</h2>
+          <form class="login-form">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+              <input type="text" class="form-control" id="name" placeholder="">
 
-    <form name="my_form" id="my">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="frame">
-
-            <h3 align="center">
-                <table align="center" class="hd">
-                    <tr>
-                        <th>
-                            <h1>Sign in</h1>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td>
-                            <input type="text" placeholder="usr" name="uname" id="name" required autocomplete="off">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td>
-                            <input type="password" placeholder="pwd" name="psw" id="pid" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="pwd" style="color:red; visibility: hidden;">8 characters</span>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-
-                <input type="button" onclick="ValidatePass()" align="center" class="button" value="login">
-                <a href="/client.html" id="link">New user?Signup</a>
-                </input>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" class="form-control" id="pid">
+            </div>
 
 
-
-
-            </h3>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                <small>Remember Me</small>
+              </label>
+              <button type="button" onclick="ValidatePass()" class="btn btn-login float-right">Login</button>
+            </div>
+          </form>
+          <p id="demo" class="text-info"></p>
+          <div class="copy-text">
+            <a href="/client.html" id="link">New user?Signup</a>
+          </div>
         </div>
-    </form>
+        <div class="col-md-8 banner-sec">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ul>
 
-    <div id="demo"></div>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block img-fluid" src="it.jpg" alt="Los Angeles">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="cs.jpg" alt="Chicago">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="join.jpeg" alt="New York">
+              </div>
+            </div>
 
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+  </section>
 
 </body>
 
