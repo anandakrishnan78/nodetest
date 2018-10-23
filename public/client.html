@@ -6,17 +6,16 @@
 
     <style>
         body {
-            
-            background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
-            background: linear-gradient(to bottom, #FFB88C, #DE6262);
-            background-size: 100%
+
+            background-image: url("https://www1.mastercard.com/content/dam/mastercardoffers/APMEA/platinum-ap/offer-assets/Priceless/Priceless-1392x708.jpg");
+            background-size: 100%;
+
         }
 
         .frame {
-            border: 1px solid black;
-
-            background-color: #f2f2f2;
-            background-image: url("https://www.siemens.com/content/dam/internet/siemens-com/global/company/about/application-pages/siemens-weltkarte-en-de-20170508/SIEMENS_Weltkarte_EN_DE_20170508/worldmap-EN/worldmap-EN/html/images/map.png");
+            border: 1px solid ivory;
+            color: firebrick;
+            font-size: 120%
         }
 
         .button {
@@ -24,14 +23,14 @@
             text-align: center;
             margin: auto;
             display: block;
-
+            background-color: #008CBA;
+            color: crimson;
             width: 70;
             height: 25;
         }
 
         #demo {
-            border: 1px solid black;
-            border-collapse: collapse;
+            color: aquamarine;
         }
     </style>
 </head>
@@ -59,7 +58,7 @@
                             <input type="text" placeholder="name" id="name" required autocomplete="off">
                         </td>
                         <td>
-                            <span class="name" style="color:red; visibility: hidden;">Name not valid</span>
+                            <span class="name" style="color:seagreen; visibility: hidden;">Name not valid</span>
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +79,7 @@
                             <input type="email" placeholder="email" name="mail" id="eid" required autocomplete="off">
                         </td>
                         <td>
-                            <span class="idd" style="color:red; visibility: hidden;">Not of valid format as of now</td>
+                            <span class="idd" style="color:seagreen; visibility: hidden;">Not of valid format as of now</td>
                     </tr>
                     <tr>
                         <td>password</td>
@@ -88,7 +87,7 @@
                             <input type="password" placeholder="password" name="psw" id="pid" required autocomplete="off">
                         </td>
                         <td>
-                            <span class="pwd" style="color:red; visibility: hidden;">min. 8 characters(number,alphabet and special char.)</span>
+                            <span class="pwd" style="color:seagreen; visibility: hidden;">min. 8 characters(number,alphabet and special char.)</span>
                         </td>
                     </tr>
                     <tr>
@@ -97,7 +96,7 @@
                             <input type="password" placeholder="password" name="psw" id="prid" required autocomplete="off">
                         </td>
                         <td>
-                            <span class="pwd" id="reso" style="color:red; visibility: hidden;">The two field's doesn't match</span>
+                            <span class="pwd" id="reso" style="color:seagreen; visibility: hidden;">The two field's doesn't match</span>
                         </td>
                     </tr>
                     <tr>
@@ -106,7 +105,7 @@
                             <input type="text" placeholder="no." name="no." min="11" id="no" required autocomplete="off">
                         </td>
                         <td>
-                            <span class="ph" style="color:red; visibility: hidden;">10-digits required</td>
+                            <span class="ph" style="color:seagreen; visibility: hidden;">10-digits required</td>
                     </tr>
                     <tr>
                         <td></td>
