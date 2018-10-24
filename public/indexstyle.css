@@ -25,11 +25,7 @@
       border-radius: 0 10px 10px 0;
     }
 
-    .carousel-caption {
-      text-align: left;
-      left: 5%;
-    }
-
+    
     .login-sec {
       padding: 50px 30px;
       position: relative;
@@ -76,28 +72,4 @@
       font-weight: 600;
     }
 
-    .banner-text {
-      width: 70%;
-      position: absolute;
-      bottom: 40px;
-      padding-left: 20px;
-    }
-
-    .banner-text h2 {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .banner-text h2:after {
-      content: " ";
-      width: 100px;
-      height: 5px;
-      background: #FFF;
-      display: block;
-      margin-top: 20px;
-      border-radius: 3px;
-    }
-
-    .banner-text p {
-      color: #fff;
-    }
+   
