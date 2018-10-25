@@ -1,133 +1,90 @@
+<!--
+@author Anandakrishnan
+@email ananduvkk78@gmail.com
+@create date 2018-10-25 10:47:34
+@modify date 2018-10-25 10:47:34
+@desc [description]
+-->
 <!DOCTYPE html>
 
+
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <style>
         body {
 
-            background-image: url("https://www1.mastercard.com/content/dam/mastercardoffers/APMEA/platinum-ap/offer-assets/Priceless/Priceless-1392x708.jpg");
-            background-size: 100%;
-
+            background-image: url("https://blog.hotelquickly.com/wp-content/uploads/2017/08/things-to-do-in-Northern-California.jpg");
+            background-size: cover;
         }
 
         .frame {
+            background: rgba(255, 255, 255, 0.5);
             border: 1px solid ivory;
             color: firebrick;
-            font-size: 120%
-        }
+            font-size: 100%;
 
-        .button {
 
-            text-align: center;
-            margin: auto;
-            display: block;
-            background-color: #008CBA;
-            color: crimson;
-            width: 70;
-            height: 25;
         }
 
         #demo {
-            color: aquamarine;
+            color: red;
+        }
+
+        .col-lg-4 {
+            margin: auto
         }
     </style>
 </head>
 
 <body>
-    <form name="my_form" id="my" method="POST" action="login">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="frame">
+    <div class="col-lg-4">
+        <form name="my_form" id="my" method="POST" action="login">
 
-            <h3 align="center">
-                <table align="center" class="hd">
-                    <tr>
-                        <th>
-                            <h1>Sign up</h1>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td>
-                            <input type="text" placeholder="name" id="name" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="name" style="color:seagreen; visibility: hidden;">Name not valid</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td>
-                            <input type="text" placeholder="Addr." id="Add" required autocomplete="off">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td>
-                            <input type="text" placeholder="usr" id="uname" required autocomplete="off">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>emailid</td>
-                        <td>
-                            <input type="email" placeholder="email" name="mail" id="eid" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="idd" style="color:seagreen; visibility: hidden;">Not of valid format as of now</td>
-                    </tr>
-                    <tr>
-                        <td>password</td>
-                        <td>
-                            <input type="password" placeholder="password" name="psw" id="pid" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="pwd" style="color:seagreen; visibility: hidden;">min. 8 characters(number,alphabet and special char.)</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Retype password </td>
-                        <td>
-                            <input type="password" placeholder="password" name="psw" id="prid" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="pwd" id="reso" style="color:seagreen; visibility: hidden;">The two field's doesn't match</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>phoneno</td>
-                        <td>
-                            <input type="text" placeholder="no." name="no." min="11" id="no" required autocomplete="off">
-                        </td>
-                        <td>
-                            <span class="ph" style="color:seagreen; visibility: hidden;">10-digits required</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="button" onclick="ValidatePass()" class="button" value="create account"></input>
-                        </td>
-                        <td></td>
-                    </tr>
+            <div class="frame">
+                <h1 align="center">Signup</h1>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control " id="name">
+                </div>
+                <div class="name" style="color:red;visibility:hidden;">Name not valid</div>
+                <div class="form-group">
+                    <label for="Add">Address:</label>
+                    <input type="text" class="form-control input-sm" id="Add">
+                </div>
+                <div class="form-group">
+                    <label for="uname">Userame:</label>
+                    <input type="text" class="form-control input-sm" id="uname">
+                </div>
+                <div class="form-group">
+                    <label for="eid">Email:</label>
+                    <input type="text" class="form-control input-sm" id="eid">
+                </div>
+                <div class="idd" style="color:red;visibility:hidden;">Email not valid</div>
+                <div class="form-group">
+                    <label for="pid">Password:</label>
+                    <input type="password" class="form-control input-sm" id="pid">
+                </div>
+                <div class="pwd" style="color:red;visibility:hidden;">min 8char. with alphabet,digits,special char.</div>
+                <div class="form-group">
+                    <label for="prid">RetypePassword:</label>
+                    <input type="password" class="form-control input-sm" id="prid">
+                </div>
+                <div id="reso" style="color:red;visibility:hidden;">two fields doesn't match</div>
+                <div class="form-group">
+                    <label for="no">Phoneno:</label>
+                    <input type="text" class="form-control input-sm" id="no">
+                </div>
+                <div class="ph" style="color:red;visibility:hidden;">10-digits</div>
+                <button type="button" onclick="ValidatePass()" class="btn btn-primary btn-block" id="press">Create Account</button>
+                <div id="demo"></div>
 
-
-
-                </table>
-                <br>
-
-
-
-            </h3>
-        </div>
-    </form>
-
-    <div id="demo"></div>
-
+            </div>
+        </form>
+    </div>
 
 </body>
 
