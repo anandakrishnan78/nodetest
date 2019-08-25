@@ -11,6 +11,7 @@ const transporter = nodemailer.createTransport({
         pass: "appu779873"
     }
 });
+console.log("hello")
 /**
  * Scheduling mails to be sent everey 10 seconds
  */
